@@ -1,0 +1,44 @@
+ <!DOCTYPE html>
+  <html>
+    <head>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      <title>{% block title %}Avto Saransk{% endblock %}</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <style>
+          input{
+              color: #ffffff;
+          }
+      </style>
+      {% block head %}{% endblock %}
+    </head>
+    <body style="background-color: #212429;">
+        <nav>
+    <div class="nav-wrapper" style='background-color: #324154;'>
+      <a href="{% url 'index' %}" class="flow-text">Avto Saransk</a>
+      <ul id="nav-mobile" class="right">
+        <ul id="slide-out" class="sidenav" style='background-color: #324154;'>
+            <li><a class="subheader white-text"><h5>Разделы</h5></a></li>
+            <li><a href="/" class="white-text">Главная</a></li>
+            {% for category in categorys %}
+            <li><a href="/category/{{category.id}}" class="white-text">{{category.title_category}}</a></li>
+            {% endfor %}
+        </ul>
+        <li><a href="#" data-target="slide-out" class="sidenav-trigger flow-text show-on-large"><i class="material-icons">menu</i></a></li>
+        {% block navbar %}{% endblock %}
+      </ul>
+    </div>
+  </nav>
+  <div class="container white-text">
+        {% block body %}{% endblock %}
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script>
+  $(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
+  </script>
+{% block my-scripts %}{% endblock %}
+    </body>
+  </html>

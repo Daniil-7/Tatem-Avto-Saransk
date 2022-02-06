@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block body %}
+{% for product in products %}
+<div class="carousel"> 
+<a class="carousel-item" href="#one!"><img src="https://res.cloudinary.com/tatemmedia/image/upload/{{product.image_product1}}"></a>
+{% if product.image_product2 %}
+<a class="carousel-item" href="#two!"><img src="https://res.cloudinary.com/tatemmedia/image/upload/{{product.image_product2}}"></a>
+{% endif %}
+{% if product.image_product3 %}
+<a class="carousel-item" href="#three!"><img src="https://res.cloudinary.com/tatemmedia/image/upload/{{product.image_product3}}"></a>
+{% endif %}
+</div>
+<div class='center'>
+<h4>
+  {{product.title}}<br>
+  Цена: {{product.money}} &#8381;
+</h4><br>
+<div><a href="tel: {{product.phone}}" class="waves-effect waves-light btn">Позвонить</a></div>
+</div>
+<h5>Описание:</h5>
+<h6>{{product.text}}</h6>
+<h5>Характеристики:</h5>
+<h6>Категория: {{product.category}}</h6>
+<h6>Состояние: {{product.condition}}</h6>
+<h6>Цена: {{product.money}} &#8381;</h6>
+{% endfor %}
+</div>
+{% endblock %}
+{% block my-scripts %}
+<script>
+  $(document).ready(function(){ 
+    $('.carousel').carousel(); 
+  });
+</script>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="center">
+<h2>Avto Saransk</h2>
+<h5>
+Avto Saransk - пример интернет магазина в моем портфолио. Можете полистать сайт и посмотреть данный образец. Также переходите на  <a href='https://tatem.pythonanywhere.com/'>мой сайт портфолио</a> где вы сможете найти другие мои проекты. С уважением Tatem(Даниил).</h5><br><br>
+<h3>Разделы</h3>
+<h5>
+  <br>
+{% for category in categorys %}
+  <li><a href="/category/{{category.id}}" class="white-text">{{category.title_category}}</a></li><br>
+{% endfor %}
+</h5>
+</div>
+{% endblock %}

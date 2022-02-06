@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block body %}
+{% for product in products %}
+<div>
+        <div class="col s12 m7">
+          <div class="card">
+            <div class="card-image">
+              <a href="/product/{{product.product_category_id}}">
+              <img src="https://res.cloudinary.com/tatemmedia/image/upload/{{product.image_product1}}">
+              </a>
+            </div>
+            <div class="card-content black-text center">
+              <h5>{{product.title}}<br>
+              {{product.money}} &#8381;</h5>
+            </div>
+            <div class="card-action center">
+              <a href="/product/{{product.product_category_id}}">Посмотреть</a>
+            </div>
+          </div>
+        </div>
+      </div>
+{% endfor %}
+{% endblock %}
+
+
