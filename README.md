@@ -1,7 +1,7 @@
 # Avto Saransk Tatem
 ---
 ## Описание 
-Avto Saransk - пример интернет магазина в моем портфолио(клон авито). Ссылка на сайт: https://avtosaransk.herokuapp.com/
+Avto Saransk - пример интернет магазина в моем портфолио(клон авито). [Ссылка на сайт](https://avtosaransk.herokuapp.com)
 ---
 ## Мотивация создание 
 1. Научится работать с параметрами в ссылке.
@@ -12,8 +12,8 @@ Avto Saransk - пример интернет магазина в моем пор
 ## Инструкция по запуску 
 1. Скопируйте репозиторий, и установите зависимость:
 ```bash
-git clone 
-cd 
+git clone https://github.com/Daniil-7/Tatem-Avto-Saransk.git
+cd Tatem-Avto-Saransk
 pip install -r requirements.txt
 ```
 2. Зарегистрируйтесь на cloudinary.
@@ -47,5 +47,5 @@ SECRET_KEY = "ваш ключ"
 3. cloudinary 1.29.0
 ---
 ## Примечание 
-1. Ссылка на сайт: https://avtosaransk.herokuapp.com/
-2. Сайт портфолио: https://tatem.pythonanywhere.com/
+1. [Ссылка на сайт проекта]( https://avtosaransk.herokuapp.com)
+2. [Сайт портфолио](https://tatem.pythonanywhere.com)
