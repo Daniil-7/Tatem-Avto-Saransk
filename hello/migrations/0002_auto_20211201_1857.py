@@ -8,42 +8,108 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('hello', '0001_initial'),
+        ("hello", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Category',
+            name="Category",
             fields=[
-                ('id', models.AutoField(primary_key=True, serialize=False, unique=True)),
-                ('title_category', models.CharField(max_length=300, verbose_name='Имя категории')),
+                (
+                    "id",
+                    models.AutoField(primary_key=True, serialize=False, unique=True),
+                ),
+                (
+                    "title_category",
+                    models.CharField(max_length=300, verbose_name="Имя категории"),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='Phone',
+            name="Phone",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('phone_form', models.CharField(max_length=12, verbose_name='Номер телефона')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "phone_form",
+                    models.CharField(max_length=12, verbose_name="Номер телефона"),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='Product',
+            name="Product",
             fields=[
-                ('product_category_id', models.AutoField(primary_key=True, serialize=False, unique=True)),
-                ('title', models.CharField(max_length=300, verbose_name='Название товара')),
-                ('money', models.IntegerField(verbose_name='Цена в рублях')),
-                ('condition', models.CharField(choices=[('Новый', 'Новый'), ('Б/У', 'Б/У')], default='Новый', max_length=200, verbose_name='Состояние:')),
-                ('image_product1', cloudinary.models.CloudinaryField(max_length=255, verbose_name='Фото товара(обязательно):')),
-                ('image_product2', cloudinary.models.CloudinaryField(blank=True, max_length=255, verbose_name='Второе фото товара(необязательно):')),
-                ('image_product3', cloudinary.models.CloudinaryField(blank=True, max_length=255, verbose_name='Третье фото товара(необязательно):')),
-                ('text', models.TextField(verbose_name='Описание товара')),
-                ('date_creat', models.DateTimeField(auto_now_add=True)),
-                ('date_update', models.DateTimeField(auto_now=True)),
-                ('category', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='categorys', to='hello.Category', verbose_name='Выбирите категорию')),
-                ('phone', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='phones', to='hello.Phone', verbose_name='Выбирити номер телефона')),
+                (
+                    "product_category_id",
+                    models.AutoField(primary_key=True, serialize=False, unique=True),
+                ),
+                (
+                    "title",
+                    models.CharField(max_length=300, verbose_name="Название товара"),
+                ),
+                ("money", models.IntegerField(verbose_name="Цена в рублях")),
+                (
+                    "condition",
+                    models.CharField(
+                        choices=[("Новый", "Новый"), ("Б/У", "Б/У")],
+                        default="Новый",
+                        max_length=200,
+                        verbose_name="Состояние:",
+                    ),
+                ),
+                (
+                    "image_product1",
+                    cloudinary.models.CloudinaryField(
+                        max_length=255, verbose_name="Фото товара(обязательно):"
+                    ),
+                ),
+                (
+                    "image_product2",
+                    cloudinary.models.CloudinaryField(
+                        blank=True,
+                        max_length=255,
+                        verbose_name="Второе фото товара(необязательно):",
+                    ),
+                ),
+                (
+                    "image_product3",
+                    cloudinary.models.CloudinaryField(
+                        blank=True,
+                        max_length=255,
+                        verbose_name="Третье фото товара(необязательно):",
+                    ),
+                ),
+                ("text", models.TextField(verbose_name="Описание товара")),
+                ("date_creat", models.DateTimeField(auto_now_add=True)),
+                ("date_update", models.DateTimeField(auto_now=True)),
+                (
+                    "category",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="categorys",
+                        to="hello.Category",
+                        verbose_name="Выбирите категорию",
+                    ),
+                ),
+                (
+                    "phone",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="phones",
+                        to="hello.Phone",
+                        verbose_name="Выбирити номер телефона",
+                    ),
+                ),
             ],
         ),
         migrations.DeleteModel(
-            name='Greeting',
+            name="Greeting",
         ),
     ]
